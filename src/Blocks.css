@@ -1,0 +1,22 @@
+.itemWrapper{
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.col{
+    margin-top: 20px;
+}
+
+.img{
+    width: auto;
+    height: 125px;
+    border: 1px solid green;
+    margin-bottom: 20px;
+  }
+  
+  .description{
+    width: auto;
+    height: 175px;
+    border: 1px solid red;
+  }

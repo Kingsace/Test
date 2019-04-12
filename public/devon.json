@@ -1,0 +1,49 @@
+{
+    "Devon": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "5282-Li-20TS",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "2903-Li-20AG100/N",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "5401-Li-20RH",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "04",
+            "img": "",
+            "model": "5733-Li-20H/N",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "05",
+            "img": "",
+            "model": "5733-Li20S20PLUS",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ]
+}
