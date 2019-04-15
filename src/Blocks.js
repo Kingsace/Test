@@ -8,8 +8,12 @@ class Blocks extends Component {
     return (
       <Col className="col" xs="12" sm="6" md="6" lg="4">
         <div className="itemWrapper">
-          <div className="img">IMG</div>
-          <div className="description">DES</div>
+          <div className="img">{this.props.image}</div>
+          <div className="description">
+            <p> Model: {this.props.model} </p>
+            <p> Weight: {this.props.weight} </p>
+            <p> Made In: {this.props.madeIn}  </p>
+          </div>
         </div>
       </Col>
     );

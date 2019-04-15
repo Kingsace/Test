@@ -1,0 +1,261 @@
+{
+
+    "Hot": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "5282-Li-20TS",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "9556NB",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "GOV3.6V",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ],
+
+    "Devon": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "5282-Li-20TS",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "2903-Li-20AG100/N",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "5401-Li-20RH",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "04",
+            "img": "",
+            "model": "5733-Li-20H/N",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "05",
+            "img": "",
+            "model": "5733-Li20S20PLUS",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ],
+    
+    "Makita": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "GA4030",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "9556NB",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "HR2470",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "04",
+            "img": "",
+            "model": "TD0101F",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "05",
+            "img": "",
+            "model": "HP332D",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ],
+
+    "Bosch": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "6-100E",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "7-100E",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "GOV3.6V",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "04",
+            "img": "",
+            "model": "GBH2-24DRE",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "05",
+            "img": "",
+            "model": "GSB 10RE",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "06",
+            "img": "",
+            "model": "GSB 13RE",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "07",
+            "img": "",
+            "model": "GSB 120",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "08",
+            "img": "",
+            "model": "GSR 120",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ],
+
+    "Aeg": [
+        {
+            "id": "01",
+            "img": "",
+            "model": "BBH12 Li",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "02",
+            "img": "",
+            "model": "BSS18C12Z Li",
+            "weight": "2.18kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "03",
+            "img": "",
+            "model": "BUS18-O",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "04",
+            "img": "",
+            "model": "BBH18 Li",
+            "weight": "2.032kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "05",
+            "img": "",
+            "model": "OMNI12C",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        },
+        {
+            "id": "06",
+            "img": "",
+            "model": "SMT355",
+            "weight": "2.5kg",
+            "madeIn": "China",
+            "useFor": "",
+            "desriptin": ""
+        }
+    ]
+
+}

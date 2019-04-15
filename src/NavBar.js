@@ -8,6 +8,7 @@ import './NavBar.css';
 import { Container, Row } from 'reactstrap';
 import Blocks from './Blocks';
 import axios from 'axios';
+import $ from 'jquery';
 
 class NavBar extends Component {
   constructor(props) {
@@ -17,58 +18,76 @@ class NavBar extends Component {
     this.handleClick = this.handleClick.bind(this);
 
     this.state = {
-			item: "hot"
+      item: "Hot",
     }
+    this.itemList = [];
+
+    this.loadData();
+    console.log(this)
   }
 
   // get data from Json
   loadData = () => {
-    let itemBrand;
-    switch (this.state.item){
-
-      default:
-        itemBrand = "/devon.json"
-        break;
-
-      case "devon":
-        itemBrand = "/devon.json"
-        break;
-
-      case "makita":
-        itemBrand = "/makita.json"
-        break;
-
-      case "bosch":
-        itemBrand = "/bosch.json"
-        break;
-
-      case "aeg":
-        itemBrand = "/aeg.json"
-        break;
-
-    }
-    axios.get(itemBrand)
-			.then(response => {
+    axios.get('./itemList.json')
+      .then(response => {
         this.setState({
-        brand: response.data
+          // array of items from json
+          brand: response.data
+        });
+        console.log('load json')
+        this.itemList = this.state.brand.Hot;
+      })
+      .catch(function (error) {
+        console.log(error);
       });
-      console.log(this.state.brand);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
-	
-	componentDidMount() {
-		this.loadData()
-	}
 
-  handleClick(e) {
-    this.setState({item: e.item});
+  componentDidMount() {
     this.loadData()
   }
 
+  closeNavBar() {
+    $('.navbar-toggler').click()
+  }
+
+  handleClick(e) {
+
+    this.setState({ item: e.item });
+
+    switch (e.item) {
+
+      default:
+        this.itemList = this.state.brand.Hot;
+        break;
+
+      case "Hot":
+        this.itemList = this.state.brand.Hot;
+        break;
+
+      case "Devon":
+        this.itemList = this.state.brand.Devon;
+        break;
+
+      case "Makita":
+        this.itemList = this.state.brand.Makita;
+        break;
+
+      case "Bosch":
+        this.itemList = this.state.brand.Bosch;
+        break;
+
+      case "Aeg":
+        this.itemList = this.state.brand.Aeg;
+        break;
+    }
+
+    this.closeNavBar();
+  }
+
   render() {
+    console.log('render')
+    console.log(this.itemList)
+
     return (
       <div>
         <Navbar bg="light" expand="lg">
@@ -76,11 +95,11 @@ class NavBar extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link onClick={(e) => this.handleClick({e, item:"hot"})}>HOT</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({e, item:"devon"})}>Devon</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({e, item:"makita"})}>Makita</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({e, item:"bosch"})}>Bosch</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({e, item:"aeg"})}>AEG</Nav.Link>
+              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Hot" })}>HOT</Nav.Link>
+              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Devon" })}>Devon</Nav.Link>
+              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Makita" })}>Makita</Nav.Link>
+              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Bosch" })}>Bosch</Nav.Link>
+              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Aeg" })}>AEG</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -94,11 +113,21 @@ class NavBar extends Component {
 
         <Container>
           <Row>
-            <Blocks />
+            {this.itemList.map((item, index) => (
+
+              <Blocks 
+                key={index} 
+                image={ item.img } 
+                model={ item.model } 
+                weight={ item.weight }
+                madeIn={ item.madeIn }
+                />
+
+            ))}
           </Row>
         </Container>
       </div>
-      
+
     );
   }
 }
