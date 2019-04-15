@@ -35,6 +35,7 @@ class NavBar extends Component {
           brand: response.data
         });
         console.log('load json')
+        console.log(this.state.brand)
         this.itemList = this.state.brand.Hot;
       })
       .catch(function (error) {
@@ -47,7 +48,9 @@ class NavBar extends Component {
   }
 
   closeNavBar() {
-    $('.navbar-toggler').click()
+    if($('.collapse ').hasClass('show')){
+      $('.navbar-toggler').click()
+    }
   }
 
   handleClick(e) {
@@ -87,11 +90,10 @@ class NavBar extends Component {
   render() {
     console.log('render')
     console.log(this.itemList)
-
     return (
       <div>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand>Item</Navbar.Brand>
+          <Navbar.Brand> Brand </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -101,11 +103,11 @@ class NavBar extends Component {
               <Nav.Link onClick={(e) => this.handleClick({ e, item: "Bosch" })}>Bosch</Nav.Link>
               <Nav.Link onClick={(e) => this.handleClick({ e, item: "Aeg" })}>AEG</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item>Action</NavDropdown.Item>
+                <NavDropdown.Item>Another action</NavDropdown.Item>
+                <NavDropdown.Item>Something</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item>Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

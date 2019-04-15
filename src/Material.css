@@ -1,0 +1,26 @@
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.materialImg{
+  width: 100%;
+  max-width: 350px;
+  max-height: 305px;
+  min-width: 210px;
+  min-height: 210px;
+  height: 100%;
+  border: 1px solid yellow;
+}
+.material_description{
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.material_grid{
+  height: 350px;
+}
+
+.materialSlider{
+  background-image: url('../src/rose.jpg')
+}

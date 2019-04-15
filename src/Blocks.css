@@ -10,13 +10,19 @@
 
 .img{
     width: auto;
-    height: 125px;
+    min-height: 200px;
     border: 1px solid green;
-    margin-bottom: 20px;
   }
   
   .description{
     width: auto;
     height: 175px;
     border: 1px solid red;
+  }
+
+  p{
+    text-overflow: ellipsis;
+    max-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
   }

@@ -21,3 +21,8 @@ code {
 .wrapper{
   margin: 0 20px;
 }
+
+#material{
+  min-height: 350px;
+  margin:50px 0px;
+}

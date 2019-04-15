@@ -6,3 +6,14 @@
 .swiper-container{
   height: 100%;
 }
+
+.background, .carousel, .carousel-item, .carousel-inner{
+  height: 100%;
+}
+
+.carousel-item{
+  background-image: url('../src/rose.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
