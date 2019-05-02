@@ -3,6 +3,13 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.swiper-slide {
+  /* background-image: url('../src/rose.jpg'); */
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
 .materialImg{
   width: 100%;
   max-width: 350px;
@@ -19,8 +26,4 @@
 
 .material_grid{
   height: 350px;
-}
-
-.materialSlider{
-  background-image: url('../src/rose.jpg')
 }

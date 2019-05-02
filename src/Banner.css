@@ -1,6 +1,7 @@
 #banner{
   border: 1px solid red;
   height: 350px;
+  margin-top: 70px;
 }
 
 .swiper-container{
@@ -12,7 +13,7 @@
 }
 
 .carousel-item{
-  background-image: url('../src/rose.jpg');
+  /* background-image: url('../src/rose.jpg'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

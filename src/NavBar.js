@@ -10,6 +10,7 @@ import Blocks from './Blocks';
 import axios from 'axios';
 import $ from 'jquery';
 
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class NavBar extends Component {
 
     this.state = {
       item: "Hot",
+      isOpen: true
     }
     this.itemList = [];
 
@@ -47,7 +49,7 @@ class NavBar extends Component {
     this.loadData()
   }
 
-  closeNavBar() {
+  closeNavBar = () => {
     if($('.collapse ').hasClass('show')){
       $('.navbar-toggler').click()
     }
@@ -94,7 +96,7 @@ class NavBar extends Component {
       <div>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand> Brand </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className={this.state.isOpen} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link onClick={(e) => this.handleClick({ e, item: "Hot" })}>HOT</Nav.Link>
