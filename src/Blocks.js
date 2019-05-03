@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Col } from 'reactstrap';
 import "./Blocks.css"
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
 } from "react-router-dom";
-import Detail from './Detail';
-
 
 class Blocks extends Component {
 
-  showDetail(){
-    ReactDOM.render(<Router ><Detail /></Router>, document.getElementById('detail'));
-  }
-  
   render() {
 
     const Button = () => (
@@ -26,9 +18,9 @@ class Blocks extends Component {
             variant="primary"
             type='button'
             onClick={() => { 
-              history.push('/detail/'+this.props.model); 
-              this.showDetail(); 
-              console.log(this)
+              console.log(this.props)
+              history.push('/detail/'+this.props.brand+'_'+this.props.model); 
+              window.location.reload(); 
             }}
           >
             More Detail!
@@ -47,8 +39,7 @@ class Blocks extends Component {
               <p> Weight: {this.props.weight} </p>
               <p> Made In: {this.props.madeIn}  </p>
               <Button />
-              
-              {/* <Button variant="primary" onClick={this.routeChange}>Go somewhere</Button> */}
+              {/* <Button variant="primary" to="/detail" onClick={this.routeChange}>Go somewhere</Button> */}
           
             </div>
           </div>

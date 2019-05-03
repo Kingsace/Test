@@ -91,7 +91,8 @@ class NavBar extends Component {
 
   render() {
     console.log('render')
-    console.log(this.itemList)
+    console.log('itemlist, ',this.itemList)
+    console.log('brand, ', this.state.item)
     return (
       <div>
         <Navbar bg="light" expand="lg">
@@ -118,15 +119,14 @@ class NavBar extends Component {
         <Container>
           <Row>
             {this.itemList.map((item, index) => (
-
               <Blocks 
                 key={index} 
                 image={ item.img } 
                 model={ item.model } 
                 weight={ item.weight }
                 madeIn={ item.madeIn }
+                brand={this.state.item}
                 />
-
             ))}
           </Row>
         </Container>

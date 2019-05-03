@@ -1,0 +1,6 @@
+@import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
+.detailWrapper{
+    position: relative;
+    max-width: 980px;
+    margin: 90px auto;
+}

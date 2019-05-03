@@ -1,22 +1,125 @@
 import React, { Component } from 'react';
 import './Detail.css';
-import {
-    BrowserRouter as Router,
-    Route,
-  } from "react-router-dom";
+import ImageGallery from 'react-image-gallery';
+import { Container, Jumbotron } from 'reactstrap';
+import axios from 'axios';
+import $ from 'jquery';
 
 class Detail extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: '',
+      Img: '',
+      madeIn: '',
+      userFor: '',
+      weight: ''
+    }
+  }
+
+  // get data from Json
+  loadData = () => {
+    axios.get('../itemList.json')
+      .then(response => {
+        this.setState({
+          // array of items from json
+          brand: response.data
+        });
+        console.log('load json')
+        this.mapData((response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    this.loadData()
+  }
+
+  mapData = (data) => {
+
+    // let brand = this.props.location.pathname.split('/detail/').pop().trim();
+    let para = this.props.location.pathname.split('/').pop().trim();
+    var result = para.split('_');
+    let brand = result[0];
+    let model = result[1];
+
+    let targetData;
+
+    $(data[brand]).each(function (i, el) {
+
+      if (el.model === model) {
+        targetData = this;
+        return;
+      }
+    })
+
+    let Des = targetData.description;
+    let MadeIn = targetData.madeIn;
+    let Img = targetData.img;
+    let useFor = targetData.useFor;
+    let weight = targetData.weight;
+
+    console.log(this)
+    this.setState({
+      // array of items from json
+      description: Des,
+      Img: Img,
+      madeIn: MadeIn,
+      userFor: useFor,
+      weight: weight
+
+    });
+
+    console.log(targetData);
+
+  }
+
   render() {
+    if (!this.state.description) {
+      return null;
+    }
+    const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
+    const des = this.state.description;
+    console.log(des)
+
     return (
-        <Router>
-            <div className="Detail">
-            <Route path="/detail" render={
-                () => {
-                    return ( <h1>Hello World </h1>)
-                }
-            }/>
-            </div>
-        </Router>
+
+      <div className="detailWrapper">
+
+        <div className="galleryWrapper">
+          <ImageGallery items={images} />
+        </div>
+
+        <div className="descriptionWrapper">
+          <Jumbotron fluid>
+            <Container>
+              <h1>Descrpition: {des}</h1>
+              <p>
+
+              </p>
+            </Container>
+          </Jumbotron>
+        </div>
+      </div>
+
+
+
     );
   }
 }
