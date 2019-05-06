@@ -7,36 +7,31 @@ import NavBar from './NavBar';
 import Material from './Material';
 import Detail from './Detail';
 import {
-    BrowserRouter as Router,
-    Route,
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 
-var createReactClass = require('create-react-class');
+// var createReactClass = require('create-react-class');
 
-var mainLayout = createReactClass({
-    render(){
-        return(
-            <div className="innerContainer">
-                <Banner />
-                <Material />
-                <NavBar />
-            </div>
-        )
-    }
-})
+class MainPage extends React.Component {
+  render() {
+    return (
+      <div className="innerContainer">
+        <Router>
+            <Route exact path="/" component={Banner} />
+            <Route exact path="/" component={Material} />
+            <Route exact path="/" component={NavBar} />
+            <Route path="/detail" component={Detail} />
+        </Router>
 
-const routing = (
-    <Router>
-      <div>
-        <Route exact path="/" component={mainLayout} />
-        <Route path="/detail" component={Detail} />
       </div>
-    </Router>
-  )
+    )
+  }
+}
 
 ReactDOM.render(<Header />, document.getElementById('header'));
-ReactDOM.render(routing, document.getElementById('wrapper'));
+ReactDOM.render(<MainPage />, document.getElementById('wrapper'));
 // ReactDOM.render(<Banner />, document.getElementById('banner'));
 // ReactDOM.render(<NavBar />, document.getElementById('navbar'));
 // ReactDOM.render(<Material />, document.getElementById('material'));

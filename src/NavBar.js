@@ -25,19 +25,28 @@ class NavBar extends Component {
     this.itemList = [];
 
     this.loadData();
-    console.log(this)
+    console.log(this);
+    this.array = [];
+    this.uniqueNames = [];
   }
 
   // get data from Json
   loadData = () => {
     axios.get('./itemList.json')
       .then(response => {
+
+        for (const key in response.data) {
+          if (response.data.hasOwnProperty(key)) {
+            console.log(key)
+            // const element = response.data[key];
+            this.array.push(key);
+          }
+        }
+
         this.setState({
           // array of items from json
-          brand: response.data
+          brand: response.data,
         });
-        console.log('load json')
-        console.log(this.state.brand)
         this.itemList = this.state.brand.Hot;
       })
       .catch(function (error) {
@@ -50,7 +59,7 @@ class NavBar extends Component {
   }
 
   closeNavBar = () => {
-    if($('.collapse ').hasClass('show')){
+    if ($('.collapse ').hasClass('show')) {
       $('.navbar-toggler').click()
     }
   }
@@ -58,41 +67,13 @@ class NavBar extends Component {
   handleClick(e) {
 
     this.setState({ item: e.item });
-
-    switch (e.item) {
-
-      default:
-        this.itemList = this.state.brand.Hot;
-        break;
-
-      case "Hot":
-        this.itemList = this.state.brand.Hot;
-        break;
-
-      case "Devon":
-        this.itemList = this.state.brand.Devon;
-        break;
-
-      case "Makita":
-        this.itemList = this.state.brand.Makita;
-        break;
-
-      case "Bosch":
-        this.itemList = this.state.brand.Bosch;
-        break;
-
-      case "Aeg":
-        this.itemList = this.state.brand.Aeg;
-        break;
-    }
-
+    this.itemList = this.state.brand[e.item];
     this.closeNavBar();
   }
 
   render() {
-    console.log('render')
-    console.log('itemlist, ',this.itemList)
-    console.log('brand, ', this.state.item)
+    this.array = [...new Set(this.array)];
+    console.log('array, ', this.array)
     return (
       <div>
         <Navbar bg="light" expand="lg">
@@ -100,11 +81,11 @@ class NavBar extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" className={this.state.isOpen} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Hot" })}>HOT</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Devon" })}>Devon</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Makita" })}>Makita</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Bosch" })}>Bosch</Nav.Link>
-              <Nav.Link onClick={(e) => this.handleClick({ e, item: "Aeg" })}>AEG</Nav.Link>
+
+            {this.array.map((item, index) => (
+              <Nav.Link key={index} onClick={(e) => this.handleClick({e, item: item})}> {item}</Nav.Link>
+            ))}
+
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item>Action</NavDropdown.Item>
                 <NavDropdown.Item>Another action</NavDropdown.Item>
@@ -119,14 +100,14 @@ class NavBar extends Component {
         <Container>
           <Row>
             {this.itemList.map((item, index) => (
-              <Blocks 
-                key={index} 
-                image={ item.img } 
-                model={ item.model } 
-                weight={ item.weight }
-                madeIn={ item.madeIn }
+              <Blocks
+                key={index}
+                image={item.img}
+                model={item.model}
+                weight={item.weight}
+                madeIn={item.madeIn}
                 brand={this.state.item}
-                />
+              />
             ))}
           </Row>
         </Container>

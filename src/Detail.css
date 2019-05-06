@@ -4,3 +4,8 @@
     max-width: 980px;
     margin: 90px auto;
 }
+
+.buttonWrapper{
+    display: flex;
+    justify-content: space-between;
+}
